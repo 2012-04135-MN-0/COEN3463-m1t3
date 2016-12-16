@@ -1,13 +1,10 @@
 var express = require("express");
 var app = express();
+var path =require("path");
 
-app.get('/', function(req, res){
-	
-	res.send('Hello World')
-});
+app.use(express.static(path.join(__dirname,"html and css")));
 
-var port = 
-Number(process.env.PORT || 5000);
+var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
-	console.log("Listening on " + port);
+  console.log("Listening on " + port);
 });
